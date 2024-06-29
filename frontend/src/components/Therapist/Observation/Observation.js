@@ -11,7 +11,6 @@ const Observation = () => {
     axios.get('https://zummit-chandan.onrender.com/api/therapist/getTherapistObservationLists')
       .then(response => {
         setData(response.data.therapistObservationData);
-        console.log(response.data.therapistObservationData)
       })
       .catch(error => {
         console.error("There was an error fetching the data!", error);
@@ -25,6 +24,7 @@ const Observation = () => {
   const toggleHandler = () => {
     setAddNew(!addNew);
   };
+
 
    const formatDate = (dateString) => {
     const options = { day: "2-digit", month: "2-digit", year: "numeric" };
